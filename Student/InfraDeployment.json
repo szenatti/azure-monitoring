@@ -13,7 +13,7 @@
         }
     },
     "variables": {
-        "vnetId": "[concat(resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', parameters('virtualMachineName')))]",
+        "vnetId": "[concat(resourceId(resourceGroup().name,'Microsoft.Network/virtualNetworks', variables('virtualnetworkname')))]",
         "virtualnetworkname": "[concat(parameters('virtualMachineName'),'-vnt')]",
         "subnetRef": "[concat(variables('vnetId'), '/subnets/default')]",
         "networkSecurityGroupName": "[concat(parameters('virtualMachineName'),'-nsg')]",
