@@ -30,8 +30,5 @@ $vmpassword = ConvertTo-SecureString (Read-Host -Prompt "Provide a password") -A
 $paramObject = @{ 'virtualMachineName' = $randomVMname
                   'adminUsername' = $vmusername 
                   }
-New-AzResourceGroupDeployment -TemplateUri 'https://github.com/nthewara/azuremonitorhackathon/raw/master/InfraDeployment.json' -TemplateParameterObject $paramObject -adminPassword $vmpassword -ResourceGroupName $rgname 
-
-#GetDate
-#$((get-date).ToLocalTime()).ToString("ddMMyyHHmmss")
+New-AzResourceGroupDeployment -TemplateUri 'https://github.com/szenatti/azure-monitoring/raw/master/Student/InfraDeployment.json' -TemplateParameterObject $paramObject -adminPassword $vmpassword -ResourceGroupName $rgname 
 
