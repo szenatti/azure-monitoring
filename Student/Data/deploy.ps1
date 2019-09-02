@@ -14,8 +14,8 @@
 Select-AzSubscription -SubscriptionName "SubscriptionName"
 
 $sqlusername = "sqladmin"
-$sqlservername = "sqlvirtualserver"
-$storagename = "sqllogstg"
+$sqlservername = "sqlvirtualserver-"
+$storagename = "sqllogstg-"
 $rgname = "<************>"
 
 #Resource Group
