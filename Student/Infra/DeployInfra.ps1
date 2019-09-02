@@ -12,18 +12,17 @@
 
 #Step 1: Use a name no longer then five charactors all lowercase.  Your initials would work well if working in the same sub as others.
 #$mlabname = 'your-initials-here-in-lowercase'
-Select-AzSubscription -SubscriptionName "SubscriptionName"
+Select-AzSubscription -SubscriptionName "MSFT-IntSub"
 
 $mlabname = 'nt'
 $vmusername = "azureadmin"
 $randomstg = Get-Random -Maximum 99999999
 $randomVMname = $mlabname.ToLower()+$randomstg
-$rgname = "s32mon112"
+$rgname = "s32mon114"
 
 
 #Resource Group
 #New-AzResourceGroup -Name "rg-"+$mlabname.tolower()+$randomstg -Location 'Australia East' 
-$rg = get-Azresourcegroup -Name $rgname 
 $vmpassword = ConvertTo-SecureString (Read-Host -Prompt "Provide a password") -AsPlainText -Force
 
 #Infra Resource Deployment
