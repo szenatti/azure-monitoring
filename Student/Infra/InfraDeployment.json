@@ -18,8 +18,7 @@
         "subnetRef": "[concat(variables('vnetId'), '/subnets/default')]",
         "networkSecurityGroupName": "[concat(parameters('virtualMachineName'),'-nsg')]",
         "nsgId": "[resourceId(resourceGroup().name, 'Microsoft.Network/networkSecurityGroups', variables ('networkSecurityGroupName'))]",
-        "publicIpAddressName": "[concat(parameters('virtualMachineName'),'-pip')]",
-        "nsgname": "[concat(parameters('virtualMachineName'),'-nsg')]",
+         "nsgname": "[concat(parameters('virtualMachineName'),'-nsg')]",
         "storageaccountname": "[concat(parameters('virtualMachineName'),'020919stg')]",
         "nicname": "[concat(parameters('virtualMachineName'),'-nic')]",
         "loganame": "[concat(parameters('virtualMachineName'),'020919loga')]"
@@ -33,7 +32,6 @@
             "dependsOn": [
                 "[concat('Microsoft.Network/networkSecurityGroups/', variables('nsgname'))]",
                 "[concat('Microsoft.Network/virtualNetworks/', variables('virtualnetworkname'))]",
-                "[concat('Microsoft.Network/publicIpAddresses/', variables('publicIpAddressName'))]"
             ],
             "properties": {
                 "ipConfigurations": [
@@ -43,10 +41,9 @@
                             "subnet": {
                                 "id": "[variables('subnetRef')]"
                             },
-                            "privateIPAllocationMethod": "Dynamic",
-                            "publicIpAddress": {
-                                "id": "[concat(resourceId(resourceGroup().name, 'Microsoft.Network/publicIpAddresses', variables('PublicIPAddressName')))]"
-                            }
+                            "privateIPAllocationMethod": "Dynamic"
+
+                            
                         }
                     }
                 ],
@@ -97,18 +94,6 @@
                         }
                     }
                 ]
-            }
-        },
-        {
-            "name": "[variables('publicIpAddressName')]",
-            "type": "Microsoft.Network/publicIpAddresses",
-            "apiVersion": "2019-02-01",
-            "location": "[resourceGroup().location]",
-            "properties": {
-                "publicIpAllocationMethod": "Dynamic"
-            },
-            "sku": {
-                "name": "Basic"
             }
         },
         {
