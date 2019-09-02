@@ -31,7 +31,7 @@
             "location": "[resourceGroup().location]",
             "dependsOn": [
                 "[concat('Microsoft.Network/networkSecurityGroups/', variables('nsgname'))]",
-                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualnetworkname'))]",
+                "[concat('Microsoft.Network/virtualNetworks/', variables('virtualnetworkname'))]"
             ],
             "properties": {
                 "ipConfigurations": [
