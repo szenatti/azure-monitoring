@@ -21,7 +21,8 @@
         "publicIpAddressName": "[concat(parameters('virtualMachineName'),'-pip')]",
         "nsgname": "[concat(parameters('virtualMachineName'),'-nsg')]",
         "storageaccountname": "[concat(parameters('virtualMachineName'),'020919stg')]",
-        "nicname": "[concat(parameters('virtualMachineName'),'-nic')]"
+        "nicname": "[concat(parameters('virtualMachineName'),'-nic')]",
+        "loganame": "[concat(parameters('virtualMachineName'),'020919loga')]"
        },
     "resources": [
         {
@@ -171,6 +172,20 @@
             "kind": "Storage",
             "sku": {
                 "name": "Standard_LRS"
+            }
+        },
+        {
+            "type": "Microsoft.OperationalInsights/workspaces",
+            "apiVersion": "2017-03-15-preview",
+            "name": "[variables('loganame')]",
+            "location": "eastus",
+            "properties": {
+                "sku": {
+                    "name": "pergb2018"
+                },
+                "features": {
+                    "searchVersion": "1"
+                }
             }
         }
     ],
