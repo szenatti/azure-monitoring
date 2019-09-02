@@ -18,7 +18,7 @@ $mlabname = 'nt'
 $vmusername = "azureadmin"
 $randomstg = Get-Random -Maximum 99999999
 $randomVMname = $mlabname.ToLower()+$randomstg
-$rgname = "s32mon114"
+$rgname = "s32rg12"
 
 
 #Resource Group
