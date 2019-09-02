@@ -1,5 +1,4 @@
 $NumberofProcs = (Get-WMIObject win32_processor | Measure-Object NumberofLogicalProcessors -sum).sum
-#Updated based on anonymous feedback.
 $NumberofProcs= [int]$env:Number_of_Processors
 While ($NumberofProcs -ne 0) 
 {
