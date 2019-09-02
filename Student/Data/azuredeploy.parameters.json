@@ -9,10 +9,10 @@
         "value": "P@ssw0rd123!"
     },
     "SQLServerName": {
-        "value": "sqlvirtualserver"
+        "value": "sqlvirtualserver-"
     },
     "StorageName": {
-        "value": "sqllogstg"
+        "value": "sqllogstg-"
     }
   }
 }
