@@ -16,8 +16,8 @@
         }
     },
     "variables": {
-        "SQLUserName":"parameters('SQLUserName')",
-        "SQLPassword":"parameters('SQLPassword')",
+        "SQLUserName":"[parameters('SQLUserName')]",
+        "SQLPassword":"[parameters('SQLPassword')]",
 
         "UniqueSuffix":"[uniqueString(resourceGroup().id)]",
         
