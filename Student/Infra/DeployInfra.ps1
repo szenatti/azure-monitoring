@@ -12,13 +12,13 @@
 
 #Step 1: Use a name no longer then five charactors all lowercase.  Your initials would work well if working in the same sub as others.
 #$mlabname = 'your-initials-here-in-lowercase'
-Select-AzSubscription -SubscriptionName "MSFT-IntSub"
+Select-AzSubscription -SubscriptionName "subname"
 
 $mlabname = 'nt'
-$vmusername = "azureadmin"
+$vmusername = "username"
 $randomstg = Get-Random -Maximum 99999999
 $randomVMname = $mlabname.ToLower()+$randomstg
-$rgname = "s32rg12"
+$rgname = "rgname"
 
 
 #Resource Group
